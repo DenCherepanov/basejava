@@ -16,24 +16,24 @@ public class ArrayStorage {
         sizeStorage = 0;
     }
 
-    public void save(Resume r) {
-        int indexResume = getIndex(r.getUuid());
+    public void save(Resume resume) {
+        int indexResume = getIndex(resume.getUuid());
         if (sizeStorage == storage.length) {
             System.out.println("Out of range!");
         } else if (indexResume > -1) {
-            System.out.println(storage[indexResume].getUuid() + " is already exists!");
+            System.out.println(resume.getUuid() + " is already exists!");
         } else {
-            storage[sizeStorage] = r;
+            storage[sizeStorage] = resume;
             sizeStorage++;
         }
     }
 
-    public void update(Resume r) {
-        int indexResume = getIndex(r.getUuid());
+    public void update(Resume resume) {
+        int indexResume = getIndex(resume.getUuid());
         if (indexResume == -1) {
-            System.out.println(r.getUuid() + " was not found!");
+            System.out.println(resume.getUuid() + " was not found!");
         } else {
-            storage[indexResume].setUuid(r.getUuid());
+            storage[indexResume] = resume;
         }
     }
 
