@@ -26,7 +26,7 @@ public class MainArray {
             }
             String uuid = null;
             if (params.length == 2) {
-                uuid = params[1].intern();
+                uuid = params[1].intern();;
             }
             switch (params[0]) {
                 case "list":
