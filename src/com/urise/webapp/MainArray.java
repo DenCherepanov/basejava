@@ -26,7 +26,7 @@ public class MainArray {
             }
             String uuid = null;
             if (params.length == 2) {
-                uuid = params[1].intern();;
+                uuid = params[1].intern();
             }
             switch (params[0]) {
                 case "list":
@@ -35,14 +35,16 @@ public class MainArray {
                 case "size":
                     System.out.println(ARRAY_STORAGE.size());
                     break;
-                case "save", "update":
+                case "save":
                     r = new Resume();
                     r.setUuid(uuid);
-                    if (params[0].equals("save")) {
-                        ARRAY_STORAGE.save(r);
-                    } else {
-                        ARRAY_STORAGE.update(r);
-                    }
+                    ARRAY_STORAGE.save(r);
+                    printAll();
+                    break;
+                case "update":
+                    r = new Resume();
+                    r.setUuid(uuid);
+                    ARRAY_STORAGE.update(r);
                     printAll();
                     break;
                 case "delete":
